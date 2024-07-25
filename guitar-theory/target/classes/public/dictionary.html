@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Music Theory Dictionary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dictionary.css">
+</head>
+<body class="dictionary-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Container for the form and results -->
+    <div class="container">
+        <div class="form-container fade-in">
+            <h1 class="title">Guitar Music Theory Dictionary</h1>
+            <label id="genre-label" for="genre-input">Genre</label>
+            <input id="genre-input" type="text">
+
+            <label id="key-label" for="key-input">Key</label>
+            <input id="key-input" type="text"> <br> <br>
+
+            <button onclick="handleSubmit()">Submit</button>
+        </div>
+        <div id="output-container" style="display: none;">
+            <h1 id="genre-header">Useful Scales for </h1>
+            <div class="images-container" id="scale-images"></div>
+        </div>
+    </div>
+
+    <!-- Script to handle form submission and display results -->
+    <script>
+        async function handleSubmit() {
+            let genre = document.getElementById("genre-input").value;
+            let key = document.getElementById("key-input").value;
+
+            // Update the genre in the <h1> element and make it visible
+            let genreHeader = document.getElementById("genre-header");
+            genreHeader.textContent = `Useful Scales For ${genre}`;
+            genreHeader.style.display = "block";
+
+            let response = await fetch("/submit", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `genre=${genre}&key=${key}`
+            });
+
+            if (response.ok) {
+                let imageNames = await response.text();
+                let scaleImagesDiv = document.getElementById("scale-images");
+                scaleImagesDiv.innerHTML = "";
+                let images = imageNames.split(",");
+                images.forEach(imageName => {
+                    let img = document.createElement("img");
+                    img.src = `/scale_images/${imageName}`;
+                    img.alt = "Scale Image";
+                    img.className = "scale-image";  // Add class for CSS styling
+                    scaleImagesDiv.appendChild(img);
+                });
+
+                document.getElementById("output-container").style.display = "block";
+            } else {
+                document.getElementById("fileContent").textContent = "File not found";
+            }
+        }
+    </script>
+</body>
+</html>

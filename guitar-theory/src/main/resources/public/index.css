@@ -1,0 +1,147 @@
+/* General Styles */
+body.home-page {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: black;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+/* Title Section */
+.title {
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    margin-top: 20px;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Top Banner Styles */
+.top-wrap {
+    text-align: center;
+    padding: 20px;
+    padding-top: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.top_banner {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Info Section Styles */
+.info-section {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: -10px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.why-learn-image {
+    width: 50%;
+    height: 65%;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: -10px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.info-text {
+    width: 50%;
+}
+
+.info-text h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.info-text p {
+    font-family: 'Merriweather', serif;
+}
+
+#learn-music-theory-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+

@@ -37,7 +37,7 @@ public class MusicTheoryController {
                 imageNames.add("a_harmonic_minor.png");
                 imageNames.add("a_blues.png");
             }
-            // Add more conditions here for other scales and keys
+            
         }
         return imageNames;
     }
